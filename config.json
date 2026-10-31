@@ -1,0 +1,157 @@
+{
+  "log": {
+    "loglevel": "warning"
+  },
+  "api": {
+    "tag": "api",
+    "services": [
+      "HandlerService"
+    ]
+  },
+  "stats": {},
+  "policy": {
+    "levels": {
+      "0": {
+        "statsUserUplink": true,
+        "statsUserDownlink": true,
+        "statsUserOnline": true
+      }
+    },
+    "system": {
+      "statsInboundUplink": true,
+      "statsInboundDownlink": true
+    }
+  },
+  "inbounds": [
+    {
+      "tag": "trojan-1",
+      "listen": "127.0.0.1",
+      "port": 10001,
+      "protocol": "trojan",
+      "settings": {
+        "clients": [
+          {
+            "password": "🛰🐙🥷",
+            "email": "node-seedtrojan30"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/🦋🐉"
+        }
+      }
+    },
+    {
+      "tag": "trojan-2",
+      "listen": "127.0.0.1",
+      "port": 10002,
+      "protocol": "trojan",
+      "settings": {
+        "clients": [
+          {
+            "password": "😿🔥💎",
+            "email": "node-seedtrojan31"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/🐺🦋🐉"
+        }
+      }
+    },
+    {
+      "tag": "trojan-3",
+      "listen": "127.0.0.1",
+      "port": 10003,
+      "protocol": "trojan",
+      "settings": {
+        "clients": [
+          {
+            "password": "🌙🦂🐺",
+            "email": "node-seedtrojan32"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/🦂🐺🦋🐉"
+        }
+      }
+    },
+    {
+      "tag": "trojan-4",
+      "listen": "127.0.0.1",
+      "port": 10004,
+      "protocol": "trojan",
+      "settings": {
+        "clients": [
+          {
+            "password": "😡🙁🐉",
+            "email": "node-seedtrojan33"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/⚡🦂"
+        }
+      }
+    },
+    {
+      "tag": "trojan-5",
+      "listen": "127.0.0.1",
+      "port": 10005,
+      "protocol": "trojan",
+      "settings": {
+        "clients": [
+          {
+            "password": "😘⚡🐍",
+            "email": "node-seedtrojan34"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/🐙⚡🦂"
+        }
+      }
+    },
+    {
+      "tag": "api",
+      "listen": "127.0.0.1",
+      "port": 10085,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "127.0.0.1"
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "tag": "blackhole"
+    }
+  ],
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "inboundTag": [
+          "api"
+        ],
+        "outboundTag": "api"
+      }
+    ]
+  }
+}
